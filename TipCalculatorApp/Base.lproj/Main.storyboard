@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalculatorApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Total Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-EH-3Uy">
+                                <rect key="frame" x="20" y="28" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip will be displayed here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMP-wE-t0s">
+                                <rect key="frame" x="20" y="313" width="560" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="YES-4E-b0f">
+                                <rect key="frame" x="18" y="550" width="564" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Rm-wJP">
+                                <rect key="frame" x="20" y="367" width="560" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YES-4E-b0f" firstAttribute="trailing" secondItem="GWx-EH-3Uy" secondAttribute="trailing" id="0Q8-No-nAr"/>
+                            <constraint firstItem="YES-4E-b0f" firstAttribute="leading" secondItem="GWx-EH-3Uy" secondAttribute="leading" id="Cfw-IN-5gm"/>
+                            <constraint firstItem="YES-4E-b0f" firstAttribute="leading" secondItem="FMP-wE-t0s" secondAttribute="leading" id="FRt-SU-Xmy"/>
+                            <constraint firstItem="GWx-EH-3Uy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Jpd-0r-8fX"/>
+                            <constraint firstItem="YES-4E-b0f" firstAttribute="trailing" secondItem="FMP-wE-t0s" secondAttribute="trailing" id="QBQ-2b-g2S"/>
+                            <constraint firstItem="GWx-EH-3Uy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QjK-ct-2Kj"/>
+                            <constraint firstItem="GWx-EH-3Uy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Usq-jV-z9H"/>
+                            <constraint firstAttribute="bottom" secondItem="FMP-wE-t0s" secondAttribute="bottom" constant="241" id="WIF-Q1-3b3"/>
+                            <constraint firstAttribute="bottom" secondItem="YES-4E-b0f" secondAttribute="bottom" constant="20" symbolic="YES" id="vlu-Yp-NaB"/>
+                            <constraint firstItem="O4o-Rm-wJP" firstAttribute="leading" secondItem="FMP-wE-t0s" secondAttribute="leading" id="xGf-DY-hDj"/>
+                            <constraint firstItem="O4o-Rm-wJP" firstAttribute="trailing" secondItem="FMP-wE-t0s" secondAttribute="trailing" id="z7i-Ub-F4h"/>
+                            <constraint firstItem="O4o-Rm-wJP" firstAttribute="top" secondItem="FMP-wE-t0s" secondAttribute="bottom" constant="8" symbolic="YES" id="zGK-wY-Ha4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tipLabel" destination="FMP-wE-t0s" id="6Me-g6-XxU"/>
+                        <outlet property="tipMoodLabel" destination="O4o-Rm-wJP" id="0Qb-PX-Wtw"/>
+                        <outlet property="tipSlider" destination="YES-4E-b0f" id="Ach-wd-inr"/>
+                        <outlet property="totalTextField" destination="GWx-EH-3Uy" id="VBW-6C-DDT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="451" y="464"/>
         </scene>
     </scenes>
 </document>
